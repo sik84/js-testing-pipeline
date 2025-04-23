@@ -30,9 +30,19 @@ jobs:
       
       - name: Run tests
         run: npm test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage/
+      
+      - name: Check test coverage
+        run: |
+          COVERAGE=$(node -e "const fs=require('fs'); const coverage=JSON.parse(fs.readFileSync('./coverage/coverage-summary.json')); console.log(coverage.total.lines.pct);")
+          echo "Test coverage: $COVERAGE%"
+          node -e "if (parseFloat(process.env.COVERAGE) < 80) { console.error('Test coverage is below 80%'); process.exit(1); }"
+        env:
+          COVERAGE: $COVERAGE

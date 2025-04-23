@@ -15,5 +15,10 @@ module.exports = {
   // Hilft bei der korrekten Auflösung von Pfaden in verschiedenen Umgebungen
   roots: ['<rootDir>/src/', '<rootDir>/test/'],
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
-  moduleFileExtensions: ['js', 'json', 'jsx', 'node']
+  moduleFileExtensions: ['js', 'json', 'jsx', 'node'],
+  // Hinzufügen des GitHub Actions Reporters
+  reporters: process.env.GITHUB_ACTIONS
+    ? ['default', 'jest-github-actions-reporter']
+    : ['default'],
+  testLocationInResults: true
 };
