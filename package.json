@@ -1,0 +1,20 @@
+{
+  "name": "js-testing-pipeline",
+  "version": "1.0.0",
+  "description": "Eine einfache JavaScript-Anwendung mit Tests für GitHub Actions",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [
+    "github-actions",
+    "testing"
+  ],
+  "author": "sik84",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0"
+  }
+}

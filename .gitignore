@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Coverage reports
+coverage/
+
+# IDE und Editor-spezifische Dateien
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
