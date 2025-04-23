@@ -69,4 +69,23 @@ describe('Calculator', () => {
       expect(() => calculator.divide(5, 0)).toThrow('Division durch Null ist nicht erlaubt.');
     });
   });
+
+  describe('power method', () => {
+    test('should calculate power correctly for positive numbers', () => {
+      expect(calculator.power(2, 3)).toBe(8);
+      expect(calculator.power(3, 2)).toBe(9);
+    });
+
+    test('should handle zero exponent', () => {
+      expect(calculator.power(5, 0)).toBe(1);
+    });
+
+    test('should handle negative exponent', () => {
+      expect(calculator.power(2, -2)).toBe(0.25);
+    });
+
+    test('should handle zero base', () => {
+      expect(calculator.power(0, 5)).toBe(0);
+    });
+  });
 });
