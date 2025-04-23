@@ -45,6 +45,16 @@ class Calculator {
     }
     return a / b;
   }
+
+  /**
+  * Berechnet a hoch b
+  * @param {number} a - Basis
+  * @param {number} b - Exponent
+  * @returns {number} a hoch b
+  */
+  power(a, b) {
+    return Math.pow(a, b);
+  }
 }
 
 module.exports = Calculator;
